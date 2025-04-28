@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="soundscapeStyle.css">
+</head>
+<body>
+<div class="scoreBox">
+<img src="../images/streakIMG.png" style="margin: 5px; height: 30px; width: 30px;">
+<p id="streakNumber">0</p>
+<img src="../images/sleepCoinIMG.PNG" style="margin: 5px; height: 30px; width: 30px;">
+<p id="points">0</p>
+<img src="../images/logo.PNG" style="position: absolute; margin-bottom: 5px; right: 0; height: 60px; width 60px;">
+</div>
+
+<center><h1>Welcome to the <i>Soundscape</i></h1></center>
+<div class="soundscapeContainer"><div class="audioBox">
+<p id="timer">10:00</p>
+<!--RAIN-->
+<label for="rainVolumeRng">Rain</label>
+<input id="rainVolumeRng" class="volumeControl" type="range"  value="50" min="1" max="100"></input>
+<button class="playButton" onclick="rainPlay()">Play/Pause</button>
+<!--OCEAN-->
+<label for="oceanVolumeRng">Ocean Waves</label>
+<input id="oceanVolumeRng" class="volumeControl" type="range" value="50" min="1" max="100"></input>
+<button class="playButton" onclick="oceanPlay()">Play/Pause</button>
+<!--URBAN-->
+  <label for="urbanVolumeRng">Urban Ambience</label>
+  <input id="urbanVolumeRng" class="volumeControl" type="range"  value="50" min="1" max="100"></input>
+ <button class="playButton" onclick="urbanPlay()">Play/Pause</button> 
+<!--BROWN NOISE-->
+<label for="brownVolumeRng">Brown Noise</label>
+<input id="brownVolumeRng" class="volumeControl" type="range"  value="50" min="1" max="100"></input>
+<button class="playButton" onclick="brownPlay()">Play/Pause</button>
+  
+  </div>
+  </div>
+  
+  <div class="bottomBar">
+<a href="../html/landingPage.html" onclick="localStorage.setItem('forceUpdate', 'true')"><img src="../images/homeButton.png" style="height: 40px; width: 40px;"></a>
+<a href="../html/tutorial.html"><img src="../images/helpButton.png" style="height: 30px; width: 30px;"></a>
+</div>
+
+  <script src="pointsAndChallenge.js"></script>
+ <script src="soundscapeScript.js"></script>
+</body>

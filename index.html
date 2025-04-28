@@ -1,0 +1,72 @@
+<head>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+<html lang="en">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+body {
+text-align: center;
+background-color: #7BB9D3;
+color: white;
+font-family: Oswald, Sans Serif;
+justify-content: center;
+margin: 0px;
+padding: 0px;
+display: block;
+}
+
+button {
+background-color: #92CACE;
+text-align: center;
+width: 70%;
+padding: 10px;
+border-radius: 15px;
+color: white;
+font-family: Oswald, Sans Serif;
+border: none;
+font-size: 24px;
+text-shadow: 1px 1px 1px grey;
+
+}
+
+button:hover {
+box-shadow: 1px 1px 1px white;
+}
+</style>
+</head>
+<body>
+<p style=" margin: 0px;font-size: 80px;">WELCOME</p>
+<p style="top-margin: 0px; font-size: 24px;">TO SERENAID</p>
+<video id="loadingScreen" width="auto" height="50%" autoplay loop muted playsinline>
+  <source src="images/meditationLoop.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<br>
+<a href="loadingPage.html"><button>GET STARTED</button></a>
+<script>
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the default prompt from appearing
+  e.preventDefault();
+  deferredPrompt = e;
+  // Optionally, show your own UI to let the user install the app
+  // For example, show a custom button for the user to click to install
+  installButton.style.display = 'block';
+
+  installButton.addEventListener('click', () => {
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user's response to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+</script>
+</body>

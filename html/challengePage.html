@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+ <link rel="stylesheet" href="../styles/challengeStyle.css">
+</head>	
+<body>
+  <!---THIS SECTION IS A POP-UP-->
+<div class="formPopup" id="form"><div class="formContainer" ><button class="closeButton" onclick="closeChallenge()">X</button>
+ <div class="section">
+   <h3>Sleep Check-In</h3>
+   <label for="sleepQuality">Sleep Quality</label>
+  <input type="range" min="1" max="10" value="0" class="slider" id="sleepQuality"></input>
+  <br>
+  <label for="sleepHours" >How many hours of sleep did you get?</label>
+  <input id="sleepHours" style="width: 20px;"></input>
+  <br>
+  <button onclick="addPoints()">Confirm All</button>
+   <h3>Daily Missions</h3>
+   <p><i>Remember to complete these for extra points!</i></p>
+   <ul>
+   <li>10-minutes in the SOUNDSCAPE</li>
+   <li>Take an in-depth SCREENING test</li>
+   <li>Do the task below</li>
+   </ul>
+   <center>
+   <h3>Mini-Game</h3>  <div id="gameContainer" class="gameContainer">
+<p>Guess the number from 1-30!</p>
+ <input id="numberInput" type="range" value="0" min="1" max="30"></input>
+<span id="numberDisplay"></span>
+<button onclick="chooseNumber()">Confirm</button>
+<p id="selectedNumber" style="font-size: 22px;"></p>
+ <p id="winLose"></p>
+</center> 
+</div>  
+   </div> 
+  </div>
+  </div>
+</div></div>
+
+ <!---THIS SECTION IS A POP-UP-->
+<div id="revealLVL" class="formPopup"><div class="formContainer" style="background-color: lightblue;"><button class="closeButton"  onclick="closeLVL()">X</button><h2>A Dream Come True...</h2> 
+<h1 id="congratsLVL"></h1>
+<p>You Leveled up!</p>
+</img>
+</div></div>
+
+<!---THIS SECTION IS A POP-UP-->
+<div class="formPopup" id="losePopup"><div class="formContainer" style="background-color: #527f92"><button class="closeButton" onclick="closeLose()">X</button><h1>Better Sleep it Off</h1>
+<p>It was worth a shot!</p> 
+<p>Enter the draw again to get a chance at our latest promo!</p>
+<img src="../images/brainSleep.PNG" style="width: 200px height: 200px;"></div></div>
+
+<!---THIS SECTION IS A POP-UP-->
+<div class="formPopup" id="winPopup"><div class="formContainer"><button class="closeButton" onclick="closeWin()">X</button><h1>Am I Daydreaming?</h1>
+<p>Would you look at that!</p> <p>Go on and stake your claim. But remember, only a limited amount of 
+gift cards are available no matter how much you win. </p>
+<p>Quality sleep is your best way to increase your chances!</p><center><div class="winBox"></div> <div class="cardIdBox"></center></center></div></div>
+
+<!---THIS SECTION IS A POP-UP-->
+<div class="formPopup" id="promoPopup"><div class="formContainer"><button class="closeButton" onclick="closePromo()">X</button><h1>Promo Info</h1>
+<p>It's looking a little empty right now...</p></div></div>
+ 
+<div class="scoreBox">
+<img src="../images/streakIMG.png" style="margin: 5px; height: 30px; width: 30px;">
+<p id="streakNumber">0</p>
+<img src="../images/sleepCoinIMG.PNG" style="margin: 5px; height: 30px; width: 30px;">
+<p id="points">0</p>
+<img src="../images/logo.PNG" style="position: absolute; margin-bottom: 5px; right: 0; height: 60px; width 60px;">
+</div>
+<div class="banner">
+<div class="alignObj">
+<h1>Sleep well, win prizes!</h1>
+<button onclick="spendPoints()">Enter Draw</button><button onclick="openPromo()">Our Latest and Greatest</button>
+</div>
+</div>
+<button class="challengeButton" onclick="openChallenge()">Tap for today's challenge!</button>
+<div class="challengeSection" id="map"></div>
+<div class="progBox"><h3 style="margin-top: 1px;">Today's Progress</h3>
+<div class="testBar"><div id="progBar"></div></div></div>
+</div>
+<div class="bottomBar">
+<a href="landingPage.html"><img src="../images/homeButton.png" style="height: 40px; width: 40px;"></a>
+<a href="tutorial.html"><img src="../images/helpButton.png" style="height: 30px; width: 30px;"></a>
+</div>
+<button style="display: none;" onclick="clearMilestonesFromPage()">Testing clear</button>
+<p style="display: none;" id="LVL"></p>
+
+</div>
+<script src="../scripts/pointsAndChallenge.js"></script>
+<script>
+</script>
+</body>
