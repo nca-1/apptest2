@@ -44,30 +44,11 @@ Your browser does not support the video tag.
 <br>
 <a href="loadingPage.html"><button>GET STARTED</button></a>
 <script>
-let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent the default prompt from appearing
-  e.preventDefault();
-  deferredPrompt = e;
-  // Optionally, show your own UI to let the user install the app
-  // For example, show a custom button for the user to click to install
-  installButton.style.display = 'block';
-
-  installButton.addEventListener('click', () => {
-    // Show the prompt
-    deferredPrompt.prompt();
-    // Wait for the user's response to the prompt
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-      } else {
-        console.log('User dismissed the A2HS prompt');
-      }
-      deferredPrompt = null;
-    });
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js');
   });
-});
+}
 
 </script>
 </body>
