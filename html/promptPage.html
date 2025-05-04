@@ -17,6 +17,7 @@
   align-items: center;
   }
   .submitButton {
+  color: black;
 	border-radius: 5px;
 	text-align: center;
 	width: 70px;
@@ -25,7 +26,10 @@
 	margin: 2px;
 	border: none;
 	  box-shadow: 2px 2px 1px lightgrey; 
-
+	}
+body {
+text-align: center;
+}
  </style>
 </head>	
 <body>
@@ -43,7 +47,7 @@
 <div style="text-align: center; height: 30vw; align-items: center; justify-content: center; display: flex;" class="tipBox">
 <h3 id="promptText"></h3>
 </div>
-<p>Write "I wrote this prompt in my journal today." in the input box and press the button for your points.<p>
+<p>Type "I wrote this prompt in my journal today." in the input box and press the button for your points.<p>
 <p style="font-size: 10px;"> You can only submit a prompt every ten minutes.</p>
 <input id="inputCheck" type="text"></input>
 <button id="submitButton" class="submitButton" onclick="promptDone()">SUBMIT</button>
@@ -66,7 +70,8 @@ var text = [
 "What troubled you today? Write down a problem to let it go for the night.",
 "What are some things you look forward to achieving tomorrow?", "Finish the prompt: I'm proud of how I...",
 "Finish the prompt: I am grateful for...", "What would you like to improve on?", "What is or isn't working for your sleep routine?",
-"What is a lesson that you learned today?", "What can I say about my sleep habits: is there anything to start? To change?"
+"What is a lesson that you learned today?", "What can I say about my sleep habits: is there anything to start? To change?",
+"What does your ideal day look like?", "How has you day to day life been impacting your sleep? What do you think?"
  //50
 ];
 
