@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles/landingStyle.css"></link>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="scoreBox">
+<img src="../images/streakIMG.png" style="margin: 5px; height: 30px; width: 30px;">
+<p id="streakNumber"></p>
+<img src="../images/sleepCoinIMG.png" style="margin: 5px; height: 30px; width: 30px;">
+<p id="points"></p>
+<img src="../images/logo.png" style="position: absolute; margin-bottom: 5px; right: 0; height: 60px; width 60px; box">
+</div>
+
+<h1>A Little Lost?</h1>
+<h2><i>Here's our guide on using SERENAID.</i></h2>
+
+<p>So, how does this all work? That might be your question. Fortunately, we have some great answers for you!</p>
+
+<h3>What’s the point?</h3>
+<p>Serenaid is meant to act as motivation towards building better sleep hygiene (AKA sleep health.) Students are largely susceptible to poor sleep duration and quality. 
+Of course, we respect that extra-curriculars, assignments, and jobs absorb most of your time. However, sleep is essential in ensuring that you perform well in these sections of your life! (Which you so dearly care about.) We give you an incentive to consistently sleep well while providing digestible tips, tricks, and resources. Every accomplishment, even the small ones, are deserving of a reward. That’s why we have our gift-card/prize draws.
+</p>
+<h4>Earning Coins</h4>
+
+	<p>Okay great. You’ve improved your sleep, but now what?</p>
+	
+	<p>As we’ve mentioned, you can enter a draw to win a prize! At the cost of 350 coins, of course. You can gain these points through regularly logging your sleep schedule, levelling up, and using app features.</p>
+
+<h5>Logging Sleep</h5>
+
+<p>Go to the challenge page to submit your sleep quality and hours in the “Today’s Sleep Challenge” section. The higher the sleep quality, and the more ideal your sleep duration is, the more coins you will gain. (So no, adding ”17 hours of sleep” will not help you. It’s a wonder if you slept that long though, really.)
+
+Coins that are gained can be used to enter the current promotion or draw.</p>
+
+<p>Purple milestones will pop-up on the middle section of your challenge page. The number on the bottom right corner indicates how many days you have completed out of a week streak. Completing a full week of logging, symbolized by a yellow milestone, will result in a level up. You can gain coins from this level up too. </p>
+
+<h5>Screening</h5>
+
+<p>Serenaid already provides generalized advice, and while we are NOT medical professionals, we can help you narrow down specific issues with your sleep. Taking a self-screening test allows for personal reflection on your sleep habits. Taking this test will supply you with a minimal amount of coins as well.</p>
+<h5>Soundscape</h5>
+
+<p>Cool-down, study, or meditate…The soundscape is waiting for you! For every 10 minute interval spent here, you will gain coins. 
+
+Volumes and active audios are adjustable.</p>
+
+<h5>Mini-game</h5>
+
+<p>Test your luck and pick a number from 1-30 for a few coins. Just for fun!</p>
+
+<h5>Progress Bar</h5>
+<p>See that progress bar at the bottom of the challenge page? Complete your daily tasks and gain bonus coins once the bar is full!</p>
+
+<h4>Spending Coins</h4>
+<h5>Entering the Draw</h5>
+<p>After accumulating 350 coins you can enter a draw! Upon pressing the ‘enter draw’ button,  you will receive a pop up with information based on a loss or win.
+If you do win, you will receive more information on the prize! But remember, first come, first serve.</p>
+<p>Further instructions depend on the promotion.</p>
+
+<h3>Your Info</h3>
+<p>Your levels (weeks completed), current streak, coins, and information can be viewed on the stats section of the app.</p>
+
+<h3>Personal Resources</h3>
+<p>One app can't solve <i>every</i> problem. AND, there are many aspects of life that affect sleep: school, work, family, and so on. 
+So as advocates for healthy rest---and a healthy life in general---we have linked
+organizations, helplines, and even more tips in the resource section.</p>
+<p>Don't be afraid to ask questions or to look for better ways to support yourself.</p>
+
+<h2>Now go on, catch some Z's!</h2>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="bottomBar">
+<a href="landingPage.html"><img src="../images/homeButton.png" style="height: 40px; width: 40px;"></a>
+<a href="tutorial.html"><img src="../images/helpButton.png" style="height: 30px; width: 30px;"></a>
+</div>
+<script src="../scripts/pointsAndChallenge.js"></script>
+<script>
+window.points = parseInt(localStorage.getItem("points")) || 0;
+const pointsDisplay = document.getElementById("points");
+pointsDisplay.textContent = window.points;
+
+window.onload = function() {
+window.points = parseInt(localStorage.getItem("points")) || 0;
+const pointsDisplay = document.getElementById("points");
+pointsDisplay.textContent = window.points;
+
+window.streakNumber = parseInt(localStorage.getItem("streakNumber")) || 0;
+const streakDisplay = document.getElementById("streakNumber");
+streakDisplay.textContent = window.streakNumber;
+}
+</script>
+</body>

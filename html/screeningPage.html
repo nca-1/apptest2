@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles/screeningStyle.css"></link>
+</head>
+<body>
+<div class="scoreBox">
+<img src="../images/streakIMG.png" style="margin: 5px; height: 30px; width: 30px;">
+<p id="streakNumber"></p>
+<img src="../images/sleepCoinIMG.png" style="margin: 5px; height: 30px; width: 30px;">
+<p id="points"></p>
+<img src="../images/logo.png" style="position: absolute; margin-bottom: 5px; right: 0; height: 60px; width 60px;">
+</div>
+<div class="banner"><h1>Self-Screening</h1></div>
+<section>
+<div class="questionBox">
+<h3>Which of these issues do you relate to the most?</h3>
+<button class="answerButton" onclick="advice1()">
+Sleeping at night is often difficult.</button>
+<button class="answerButton" onclick="advice2()">Excessive daytime tiredness, unrelated to breathing issues.</button>
+<button class="answerButton" onclick="advice3()">Waking up in the middle of the night and having difficulties going <b>back to sleep.</b></button>
+<button class="answerButton" onclick="advice4()">Snoring or having difficulty breathing at night.
+</button>
+</div>
+<div class="questionBox">
+<h3>What other issues do you experience regularly?</h3>
+<button class="answerButton" onclick="advice1()">Sleep quality varies drastically day by day.</button>
+<button class="answerButton" onclick="advice2()">Difficulties with processing information.</button>
+<button class="answerButton" onclick="advice3()">Experiencing headaches.</button>
+<button class="answerButton" onclick="advice4()">Others note that your sleep activity is significant enough to <i>impact their sleep as well.</i></button>
+</div>
+<div class="questionBox">
+<h3>How does you sleep impact the following day?</h3>
+<button class="answerButton" onclick="advice1()">Feeling low, cranky, and/or depressed.</button>
+<button class="answerButton" onclick="advice2()">Having a hard time focusing on tasks or completing work.</button>
+<button class="answerButton" onclick="advice3()">Difficulties setting up a consistent sleep routine.</button>
+<button class="answerButton" onclick="advice4()">Frequently waking up with a dry throat in the mornings. </button>
+</div>
+<div class="questionBox">
+<h3>What other concerns do you have?</h3>
+<button class="answerButton" onclick="advice1()">Daily tasks continue to get progressively overwhelming.</button>
+<button class="answerButton" onclick="advice2()">Waking up to early.</button>
+<button class="answerButton" onclick="advice3()">Sleep does not "improve" energy.</button>
+<button class="answerButton" onclick="advice4()">Waking during the night due to gasping and choking.</button>
+</div>
+
+
+
+
+</section>
+<div class="collectButtons">
+<button class="submitButton" onclick="totalPoints()">SUBMIT</button><button class="redoButton" onclick="redo()">REDO</button>
+</div>
+<h2>Tip...</h2> 
+<div class="tipBox">
+<p id="feedback"></p></div>
+<p><i>There will be a delay in adding your points if you are frequently taking this test. Make use of it!</i></p>
+<p style="font-size: 10px">Serenaid is not a subsitute for genuine medical advice and diagnosis. Feel free to press any answer that applies to you multiple times, but 
+DO NOT consider any advice as a complete, concrete diagnosis for anything.</p>
+<br>
+<br>
+<br>
+<br>
+
+<div class="bottomBar">
+<a href="landingPage.html"><img src="../images/homeButton.png" style="height: 40px; width: 40px;"></a>
+<a href="tutorial.html"><img src="../images/helpButton.png" style="height: 30px; width: 30px;"></a>
+</div>
+<script src="../scripts/pointsAndChallenge.js"></script>
+<script src="../scripts/screeningScript.js"></script>
+</body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="../styles/landingStyle.css">
+</head>	
+<body>
+<div class="scoreBox">
+<img src="../images/logo.png" style="position: absolute; margin-bottom: 5px; right: 0; height: 60px; width 60px;">
+</div>
+
+<div class="banner"><h1>Your Stats</h1></div>
+<h3>Level:</h3><p style="font-size: 50px;"id="weekLevel"><b></b></p>
+<h3>Day(s) Streak: </h3><p id="streakNumber"></p>
+<h3>Coins:</h3><p id="points">
+
+
+  <div class="bottomBar">
+<a href="../html/landingPage.html" onclick="localStorage.setItem('forceUpdate', 'true')"><img src="../images/homeButton.png" style="height: 40px; width: 40px;"></a>
+<a href="../html/tutorial.html"><img src="../images/helpButton.png" style="height: 30px; width: 30px;"></a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<script src="../scripts/pointsAndChallenge.js"></script>
+<script>window.points = parseInt(localStorage.getItem("points")) || 0;
+const pointsDisplay = document.getElementById("points");
+pointsDisplay.textContent = window.points;
+
+window.onload = function() {
+window.points = parseInt(localStorage.getItem("points")) || 0;
+const pointsDisplay = document.getElementById("points");
+pointsDisplay.textContent = window.points;
+
+window.streakNumber = parseInt(localStorage.getItem("streakNumber")) || 0;
+const streakDisplay = document.getElementById("streakNumber");
+streakDisplay.textContent = window.streakNumber;
+
+window.weekStreak = parseInt(localStorage.getItem("weekLevel")) || 0;
+const weekStreak = document.getElementById("weekLevel");
+weekStreak.textContent = window.weekLevel;
+
+}</script></script>
+</body>

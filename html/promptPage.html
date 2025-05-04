@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="../styles/landingStyle.css">
+ <style>
+ .banner {
+ height: 140px;
+  width: 100%;
+  background-color: #f6f5ec;
+  border-top: 5px solid #dbd6ac;
+  border-bottom: 5px solid #dbd6ac;
+  margin: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  }
+  .submitButton {
+	border-radius: 5px;
+	text-align: center;
+	width: 70px;
+	height: 20px;
+	background-color: #fed8d0;
+	margin: 2px;
+	border: none;
+	  box-shadow: 2px 2px 1px lightgrey; 
+
+ </style>
+</head>	
+<body>
+<div class="scoreBox">
+<img src="../images/streakIMG.png" style="margin: 5px; height: 30px; width: 30px;">
+<p id="streakNumber">0</p>
+<img src="../images/sleepCoinIMG.png" style="margin: 5px; height: 30px; width: 30px;">
+<p id="points">0</p>
+<img src="../images/logo.png" style="position: absolute; margin-bottom: 5px; right: 0; height: 60px; width 60px;">
+</div>
+
+
+<div class="banner">
+<h1>Take-Action: Journal Prompts</h1></div>
+<div style="text-align: center; height: 30vw; align-items: center; justify-content: center; display: flex;" class="tipBox">
+<h3 id="promptText"></h3>
+</div>
+<p>Write "I wrote this prompt in my journal today." in the input box and press the button for your points.<p>
+<p style="font-size: 10px;"> You can only submit a prompt every ten minutes.</p>
+<input id="inputCheck" type="text"></input>
+<button id="submitButton" class="submitButton" onclick="promptDone()">SUBMIT</button>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="bottomBar">
+<a href="landingPage.html"><img src="../images/homeButton.png" style="height: 40px; width: 40px;"></a>
+<a href="tutorial.html"><img src="../images/helpButton.png" style="height: 30px; width: 30px;"></a>
+</div>
+
+<script src="../scripts/pointsAndChallenge.js"></script>
+<script>
+
+var text = [
+"What are five wins you had today? Big or small! Let's end the day with gratitude rather than stress.",
+"What troubled you today? Write down a problem to let it go for the night.",
+"What are some things you look forward to achieving tomorrow?", "Finish the prompt: I'm proud of how I...",
+"Finish the prompt: I am grateful for...", "What would you like to improve on?", "What is or isn't working for your sleep routine?",
+"What is a lesson that you learned today?", "What can I say about my sleep habits: is there anything to start? To change?"
+ //50
+];
+
+window.points = parseInt(localStorage.getItem("points")) || 0;
+const pointsDisplay = document.getElementById("points");
+pointsDisplay.textContent = window.points;
+
+window.onload = function() {
+window.points = parseInt(localStorage.getItem("points")) || 0;
+const pointsDisplay = document.getElementById("points");
+pointsDisplay.textContent = window.points;
+
+window.streakNumber = parseInt(localStorage.getItem("streakNumber")) || 0;
+const streakDisplay = document.getElementById("streakNumber");
+streakDisplay.textContent = window.streakNumber;
+
+var genNumber = Math.floor(Math.random() * text.length);
+document.getElementById("promptText").innerHTML = text[genNumber];
+}
+
+function promptDone(){
+var inputCheck = document.getElementById("inputCheck");
+var submitButton = document.getElementById("submitButton");
+
+if (inputCheck.value === "I wrote this prompt in my journal today.") {
+window.points += 30;
+localStorage.setItem("points", window.points);
+pointsDisplay.textContent = window.points;
+inputCheck.value = "";
+submitButton.style.display = "none";
+setInterval(function() {
+  submitButton.style.display = "flex";
+}, 600000);
+}
+else {
+alert("Please provide proper input.");
+}
+
+}
+</script>
+</body>
