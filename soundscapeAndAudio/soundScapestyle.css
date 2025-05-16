@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+	background-color: white;
+font-family: Lato, Sans Serif;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.soundscapeContainer {
+	margin: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+
+.audioBox {
+	background-color: #cbe1eb;
+  align-items: center;
+  border-radius: 15px;
+  width: 80%;
+  height: 500px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 1px lightgrey; 
+}
+
+#timer {
+	font-size: 24px;
+	color: #527f92;
+	
+}
+
+.playButton {
+	color: white;
+background-color: #527f92;
+  margin: 5px;
+  border-radius: 15px; 
+  padding: 5px;
+}
+
+.scoreBox {
+border-bottom: 2px solid lightgrey;
+align-items: center;
+position: relative;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  margin: 2px;
+}
+
+.bottomBar {
+
+align-items: center;
+justify-content: center;
+  font-size:10px;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  border-top: 2px solid lightgrey;
+  border-left: 5px solid white;
+  position: fixed;
+  bottom: 0;
+  
+}
+::-webkit-scrollbar {
+background-color: white;
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px solid #a0c1cf;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+ background-color: #a0c1cf;
+  border-radius: 30px;
+  width: 2px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none; 
+  /* creating a custom design */
+  width: 70px;
+  outline: none;
+  /*  slider progress trick  */
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+::-webkit-scrollbar {
+background-color: white;
+  width: 20px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px solid #a0c1cf;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+ background-color: #a0c1cf;
+  border-radius: 30px;
+  width: 2px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none; 
+  /* creating a custom design */
+  width: 60%;
+  outline: none;
+  /*  slider progress trick  */
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 20px;
+  background:  #fff;
+  border-radius: 15px;
+}
+
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none; 
+  /* creating a custom design */
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #527f92;
+  /*  slider progress trick  */
+  box-shadow: -407px 0 0 400px #527f92;
+}
